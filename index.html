@@ -43,6 +43,15 @@
 						fontFamily: {
 							poppins: ["Poppins", "serif"],
 						},
+						animation: {
+							wiggle: "wiggle 5s ease-in-out infinite",
+						},
+						keyframes: {
+							wiggle: {
+								"0%, 100%": { transform: "rotate(-3deg)" },
+								"50%": { transform: "rotate(3deg)" },
+							},
+						},
 					},
 				},
 			};
@@ -95,10 +104,26 @@
 						<ul
 							class="menu menu-horizontal px-1 space-x-8 font-medium"
 						>
-							<li class="hover:text-bike-primary transition-colors duration-300"><a>Home</a></li>
-							<li class="hover:text-bike-primary transition-colors duration-300"><a>Shop</a></li>
-							<li class="hover:text-bike-primary transition-colors duration-300"><a>News</a></li>
-							<li class="hover:text-bike-primary transition-colors duration-300"><a>Contact</a></li>
+							<li
+								class="hover:text-bike-primary transition-colors duration-300"
+							>
+								<a>Home</a>
+							</li>
+							<li
+								class="hover:text-bike-primary transition-colors duration-300"
+							>
+								<a>Shop</a>
+							</li>
+							<li
+								class="hover:text-bike-primary transition-colors duration-300"
+							>
+								<a>News</a>
+							</li>
+							<li
+								class="hover:text-bike-primary transition-colors duration-300"
+							>
+								<a>Contact</a>
+							</li>
 						</ul>
 					</div>
 					<!-- login button -->
@@ -168,7 +193,9 @@
 					class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 py-10"
 				>
 					<!-- Card 1 -->
-					<div class="card p-5 bg-base-100 shadow-xl">
+					<div
+						class="card cursor-pointer p-5 bg-base-100 border shadow-md hover:shadow-xl transition-shadow duration-500"
+					>
 						<figure>
 							<img src="images/others/latest1.png" alt="" />
 						</figure>
@@ -193,7 +220,9 @@
 						</div>
 					</div>
 					<!-- Card 2 -->
-					<div class="card p-5 bg-base-100 shadow-xl">
+					<div
+						class="card cursor-pointer p-5 bg-base-100 border shadow-md hover:shadow-xl transition-shadow duration-500"
+					>
 						<figure>
 							<img src="images/others/latest2.png" alt="" />
 						</figure>
@@ -218,7 +247,9 @@
 						</div>
 					</div>
 					<!-- Card 3 -->
-					<div class="card p-5 bg-base-100 shadow-xl">
+					<div
+						class="card cursor-pointer p-5 bg-base-100 border shadow-md hover:shadow-xl transition-shadow duration-500"
+					>
 						<figure>
 							<img src="images/others/latest3.png" alt="" />
 						</figure>
@@ -247,17 +278,19 @@
 			<!-- Latest News Section End -->
 
 			<!-- Happy Clients Section Start -->
-			<section class="my-32">
+			<section class="my-32 pb-10">
 				<h2
-					class="text-3xl sm:text-5xl text-center text-black font-bold sm:font-semibold mb-8"
+					class="text-3xl sm:text-5xl text-center text-black font-bold sm:font-semibold mb-20"
 				>
 					Happy <span class="text-bike-primary">Clients says</span>
 				</h2>
 				<div
-					class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 py-10"
+					class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 group"
 				>
 					<!-- Rating 1 -->
-					<div class="card text-center p-5 bg-base-100 shadow-xl">
+					<div
+						class="card text-center p-5 bg-base-100 shadow-xl group-hover:scale-90 hover:!scale-100 group-hover:blur-sm hover:!blur-0 cursor-pointer transition-all duration-500"
+					>
 						<div class="avatar">
 							<div class="w-24 mx-auto rounded-full">
 								<img src="images/others/user-1.png" alt="" />
@@ -312,7 +345,9 @@
 						</div>
 					</div>
 					<!-- Rating 2 -->
-					<div class="card text-center p-5 bg-base-100 shadow-xl">
+					<div
+						class="card text-center p-5 bg-base-100 shadow-xl group-hover:scale-90 hover:!scale-100 group-hover:blur-sm hover:!blur-0 cursor-pointer transition-all duration-500"
+					>
 						<div class="avatar">
 							<div class="w-24 mx-auto rounded-full">
 								<img src="images/others/user-2.png" alt="" />
@@ -367,7 +402,9 @@
 						</div>
 					</div>
 					<!-- Rating 3 -->
-					<div class="card text-center p-5 bg-base-100 shadow-xl">
+					<div
+						class="card text-center p-5 bg-base-100 shadow-xl group-hover:scale-90 hover:!scale-100 group-hover:blur-sm hover:!blur-0 cursor-pointer transition-all duration-500"
+					>
 						<div class="avatar">
 							<div class="w-24 mx-auto rounded-full">
 								<img src="images/others/user-3.png" alt="" />
@@ -426,11 +463,14 @@
 			<!-- Happy Clients Section End -->
 			<!-- Frequently Asked Questions Section Start -->
 			<section class="my-32">
-				<h2 class="text-3xl sm:text-5xl text-center text-black font-bold sm:font-semibold mb-8">
-					Frequently Asked <span class="text-bike-primary">Questions</span>
+				<h2
+					class="text-3xl sm:text-5xl text-center text-black font-bold sm:font-semibold mb-8"
+				>
+					Frequently Asked
+					<span class="text-bike-primary">Questions</span>
 				</h2>
 				<div class="grid grid-cols-1 sm:grid-cols-2 gap-24 mt-24">
-					<div class="">
+					<div class="animate-wiggle">
 						<img src="images/others/faq.png" alt="" />
 					</div>
 					<!-- Accordion -->
@@ -499,33 +539,81 @@
 		</main>
 		<!-- Footer Start -->
 		<footer class="bg-[#0B0D17]">
-			<div class="flex flex-col-reverse sm:flex-row justify-between items-center gap-4 sm:gap-6 w-11/12 lg:w-10/12 mx-auto pt-14 pb-12">
+			<div
+				class="flex flex-col-reverse sm:flex-row justify-between items-center gap-4 sm:gap-6 w-11/12 lg:w-10/12 mx-auto pt-14 pb-12"
+			>
 				<div class="text-white">
 					<ul class="flex gap-6">
-						<li class="hover:text-bike-primary transition-colors duration-300"><a href="#">Download Now</a></li>
-						<li class="hover:text-bike-primary transition-colors duration-300"><a href="#">License</a></li>
+						<li
+							class="hover:text-bike-primary transition-colors duration-300"
+						>
+							<a href="#">Download Now</a>
+						</li>
+						<li
+							class="hover:text-bike-primary transition-colors duration-300"
+						>
+							<a href="#">License</a>
+						</li>
 					</ul>
 					<nav class="mt-6 sm:mt-3 mb-6">
-						<ul class="flex flex-wrap text-sm sm:text-base gap-3 sm:gap-6">
-							<li class="hover:text-bike-primary transition-colors duration-300"><a href="#">Home</a></li>
-							<li class="hover:text-bike-primary transition-colors duration-300"><a href="#">Feature</a></li>
-							<li class="hover:text-bike-primary transition-colors duration-300"><a href="#">Pricing</a></li>
-							<li class="hover:text-bike-primary transition-colors duration-300"><a href="#">Careers</a></li>
-							<li class="hover:text-bike-primary transition-colors duration-300"><a href="#">Help</a></li>
-							<li class="hover:text-bike-primary transition-colors duration-300"><a href="#">Privacy Policy</a></li>
+						<ul
+							class="flex flex-wrap text-sm sm:text-base gap-3 sm:gap-6"
+						>
+							<li
+								class="hover:text-bike-primary transition-colors duration-300"
+							>
+								<a href="#">Home</a>
+							</li>
+							<li
+								class="hover:text-bike-primary transition-colors duration-300"
+							>
+								<a href="#">Feature</a>
+							</li>
+							<li
+								class="hover:text-bike-primary transition-colors duration-300"
+							>
+								<a href="#">Pricing</a>
+							</li>
+							<li
+								class="hover:text-bike-primary transition-colors duration-300"
+							>
+								<a href="#">Careers</a>
+							</li>
+							<li
+								class="hover:text-bike-primary transition-colors duration-300"
+							>
+								<a href="#">Help</a>
+							</li>
+							<li
+								class="hover:text-bike-primary transition-colors duration-300"
+							>
+								<a href="#">Privacy Policy</a>
+							</li>
 						</ul>
 					</nav>
-					<p class="text-sm text-[#D9DBE1]">&copy; 2025 bike. All rights reserved</p>
+					<p class="text-sm text-[#D9DBE1]">
+						&copy; 2025 bike. All rights reserved
+					</p>
 				</div>
 				<div class="text-white">
-					<h3 class="text-lg font-medium text-[#D9DBE1] ">
+					<h3 class="text-lg font-medium text-[#D9DBE1]">
 						Get The App
 					</h3>
 					<div class="h-10 my-4">
-						<a href="#"><img class="h-full" src="images/others/ios.png" alt=""></a>
+						<a href="#"
+							><img
+								class="h-full"
+								src="images/others/ios.png"
+								alt=""
+						/></a>
 					</div>
 					<div class="h-10">
-						<a href="#"><img class="h-full" src="images/others/android.png" alt=""></a>
+						<a href="#"
+							><img
+								class="h-full"
+								src="images/others/android.png"
+								alt=""
+						/></a>
 					</div>
 				</div>
 			</div>
